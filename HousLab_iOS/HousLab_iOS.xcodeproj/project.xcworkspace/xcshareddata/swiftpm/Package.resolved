@@ -2,6 +2,15 @@
   "object": {
     "pins": [
       {
+        "package": "Inject",
+        "repositoryURL": "https://github.com/krzysztofzablocki/Inject.git",
+        "state": {
+          "branch": "main",
+          "revision": "81d942634f359dc1d00a904e70328410aefd23fb",
+          "version": null
+        }
+      },
+      {
         "package": "SnapKit",
         "repositoryURL": "https://github.com/SnapKit/SnapKit.git",
         "state": {
