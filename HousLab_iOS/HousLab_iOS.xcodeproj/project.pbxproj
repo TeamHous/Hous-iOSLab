@@ -13,6 +13,10 @@
 		B85302AD28728F6300F06234 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B85302AB28728F6300F06234 /* Main.storyboard */; };
 		B85302AF28728F6400F06234 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B85302AE28728F6400F06234 /* Assets.xcassets */; };
 		B85302B228728F6400F06234 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B85302B028728F6400F06234 /* LaunchScreen.storyboard */; };
+		B85302C12872A1EC00F06234 /* HoseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85302C02872A1EC00F06234 /* HoseViewController.swift */; };
+		B85302C32872A1F900F06234 /* EuiJinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85302C22872A1F900F06234 /* EuiJinViewController.swift */; };
+		B85302C52872A1FF00F06234 /* MinJaeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85302C42872A1FF00F06234 /* MinJaeViewController.swift */; };
+		B85302C72872A20600F06234 /* JiHyeonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85302C62872A20600F06234 /* JiHyeonViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		B85302AE28728F6400F06234 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B85302B128728F6400F06234 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B85302B328728F6400F06234 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B85302C02872A1EC00F06234 /* HoseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoseViewController.swift; sourceTree = "<group>"; };
+		B85302C22872A1F900F06234 /* EuiJinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EuiJinViewController.swift; sourceTree = "<group>"; };
+		B85302C42872A1FF00F06234 /* MinJaeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinJaeViewController.swift; sourceTree = "<group>"; };
+		B85302C62872A20600F06234 /* JiHyeonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JiHyeonViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +78,7 @@
 		B85302B928728F7900F06234 /* JiHyeon */ = {
 			isa = PBXGroup;
 			children = (
+				B85302C62872A20600F06234 /* JiHyeonViewController.swift */,
 			);
 			path = JiHyeon;
 			sourceTree = "<group>";
@@ -77,6 +86,7 @@
 		B85302BA28728F8100F06234 /* MinJae */ = {
 			isa = PBXGroup;
 			children = (
+				B85302C42872A1FF00F06234 /* MinJaeViewController.swift */,
 			);
 			path = MinJae;
 			sourceTree = "<group>";
@@ -84,6 +94,7 @@
 		B85302BB28728F9E00F06234 /* EuiJin */ = {
 			isa = PBXGroup;
 			children = (
+				B85302C22872A1F900F06234 /* EuiJinViewController.swift */,
 			);
 			path = EuiJin;
 			sourceTree = "<group>";
@@ -91,6 +102,7 @@
 		B85302BC28728FA400F06234 /* HoSe */ = {
 			isa = PBXGroup;
 			children = (
+				B85302C02872A1EC00F06234 /* HoseViewController.swift */,
 			);
 			path = HoSe;
 			sourceTree = "<group>";
@@ -194,8 +206,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B85302C52872A1FF00F06234 /* MinJaeViewController.swift in Sources */,
 				B85302AA28728F6300F06234 /* ViewController.swift in Sources */,
+				B85302C72872A20600F06234 /* JiHyeonViewController.swift in Sources */,
+				B85302C12872A1EC00F06234 /* HoseViewController.swift in Sources */,
 				B85302A628728F6300F06234 /* AppDelegate.swift in Sources */,
+				B85302C32872A1F900F06234 /* EuiJinViewController.swift in Sources */,
 				B85302A828728F6300F06234 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
