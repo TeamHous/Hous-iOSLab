@@ -19,6 +19,14 @@
 		B85302C32872A1F900F06234 /* EuiJinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85302C22872A1F900F06234 /* EuiJinViewController.swift */; };
 		B85302C52872A1FF00F06234 /* MinJaeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85302C42872A1FF00F06234 /* MinJaeViewController.swift */; };
 		B85302C72872A20600F06234 /* JiHyeonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85302C62872A20600F06234 /* JiHyeonViewController.swift */; };
+		B88908122873F81000B88985 /* RulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88908112873F81000B88985 /* RulesViewController.swift */; };
+		B88908142873FA9D00B88985 /* MainTabNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88908132873FA9D00B88985 /* MainTabNavigationView.swift */; };
+		B889081628742A2700B88985 /* RulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B889081528742A2700B88985 /* RulesView.swift */; };
+		B889081A287440A800B88985 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8890819287440A800B88985 /* UIView+.swift */; };
+		B889081C2874438800B88985 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B889081B2874438800B88985 /* CategoryCollectionViewCell.swift */; };
+		B889081E2874463800B88985 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B889081D2874463800B88985 /* UIColor+.swift */; };
+		B889082028744B3700B88985 /* TodayTodoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B889081F28744B3700B88985 /* TodayTodoCollectionViewCell.swift */; };
+		B88908232874505D00B88985 /* ImageLiteral.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88908222874505D00B88985 /* ImageLiteral.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +41,14 @@
 		B85302C22872A1F900F06234 /* EuiJinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EuiJinViewController.swift; sourceTree = "<group>"; };
 		B85302C42872A1FF00F06234 /* MinJaeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinJaeViewController.swift; sourceTree = "<group>"; };
 		B85302C62872A20600F06234 /* JiHyeonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JiHyeonViewController.swift; sourceTree = "<group>"; };
+		B88908112873F81000B88985 /* RulesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesViewController.swift; sourceTree = "<group>"; };
+		B88908132873FA9D00B88985 /* MainTabNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabNavigationView.swift; sourceTree = "<group>"; };
+		B889081528742A2700B88985 /* RulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesView.swift; sourceTree = "<group>"; };
+		B8890819287440A800B88985 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		B889081B2874438800B88985 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		B889081D2874463800B88985 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		B889081F28744B3700B88985 /* TodayTodoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayTodoCollectionViewCell.swift; sourceTree = "<group>"; };
+		B88908222874505D00B88985 /* ImageLiteral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLiteral.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +98,11 @@
 		B85302B928728F7900F06234 /* JiHyeon */ = {
 			isa = PBXGroup;
 			children = (
+				B88908212874504C00B88985 /* Literal */,
+				B88908182874409C00B88985 /* Extension */,
+				B88908102873F7DC00B88985 /* Rules */,
 				B85302C62872A20600F06234 /* JiHyeonViewController.swift */,
+				B88908132873FA9D00B88985 /* MainTabNavigationView.swift */,
 			);
 			path = JiHyeon;
 			sourceTree = "<group>";
@@ -136,6 +156,42 @@
 				B85302A928728F6300F06234 /* ViewController.swift */,
 			);
 			path = MainViewController;
+			sourceTree = "<group>";
+		};
+		B88908102873F7DC00B88985 /* Rules */ = {
+			isa = PBXGroup;
+			children = (
+				B889081728742D3F00B88985 /* Cell */,
+				B88908112873F81000B88985 /* RulesViewController.swift */,
+				B889081528742A2700B88985 /* RulesView.swift */,
+			);
+			path = Rules;
+			sourceTree = "<group>";
+		};
+		B889081728742D3F00B88985 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B889081B2874438800B88985 /* CategoryCollectionViewCell.swift */,
+				B889081F28744B3700B88985 /* TodayTodoCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		B88908182874409C00B88985 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				B8890819287440A800B88985 /* UIView+.swift */,
+				B889081D2874463800B88985 /* UIColor+.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		B88908212874504C00B88985 /* Literal */ = {
+			isa = PBXGroup;
+			children = (
+				B88908222874505D00B88985 /* ImageLiteral.swift */,
+			);
+			path = Literal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,8 +278,16 @@
 				B85302AA28728F6300F06234 /* ViewController.swift in Sources */,
 				B85302C72872A20600F06234 /* JiHyeonViewController.swift in Sources */,
 				B85302C12872A1EC00F06234 /* HoseViewController.swift in Sources */,
+				B88908232874505D00B88985 /* ImageLiteral.swift in Sources */,
+				B889081C2874438800B88985 /* CategoryCollectionViewCell.swift in Sources */,
 				B85302A628728F6300F06234 /* AppDelegate.swift in Sources */,
 				B85302C32872A1F900F06234 /* EuiJinViewController.swift in Sources */,
+				B889082028744B3700B88985 /* TodayTodoCollectionViewCell.swift in Sources */,
+				B889081628742A2700B88985 /* RulesView.swift in Sources */,
+				B88908142873FA9D00B88985 /* MainTabNavigationView.swift in Sources */,
+				B889081A287440A800B88985 /* UIView+.swift in Sources */,
+				B889081E2874463800B88985 /* UIColor+.swift in Sources */,
+				B88908122873F81000B88985 /* RulesViewController.swift in Sources */,
 				B85302A828728F6300F06234 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
