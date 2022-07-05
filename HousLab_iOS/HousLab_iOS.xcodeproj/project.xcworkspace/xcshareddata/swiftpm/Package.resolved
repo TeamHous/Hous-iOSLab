@@ -1,34 +1,32 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "Inject",
-        "repositoryURL": "https://github.com/krzysztofzablocki/Inject.git",
-        "state": {
-          "branch": "main",
-          "revision": "81d942634f359dc1d00a904e70328410aefd23fb",
-          "version": null
-        }
-      },
-      {
-        "package": "SnapKit",
-        "repositoryURL": "https://github.com/SnapKit/SnapKit.git",
-        "state": {
-          "branch": null,
-          "revision": "f222cbdf325885926566172f6f5f06af95473158",
-          "version": "5.6.0"
-        }
-      },
-      {
-        "package": "Then",
-        "repositoryURL": "https://github.com/devxoul/Then.git",
-        "state": {
-          "branch": null,
-          "revision": "d41ef523faef0f911369f79c0b96815d9dbb6d7a",
-          "version": "3.0.0"
-        }
+  "pins" : [
+    {
+      "identity" : "inject",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/krzysztofzablocki/Inject.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "81d942634f359dc1d00a904e70328410aefd23fb"
       }
-    ]
-  },
-  "version": 1
+    },
+    {
+      "identity" : "snapkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SnapKit/SnapKit.git",
+      "state" : {
+        "revision" : "f222cbdf325885926566172f6f5f06af95473158",
+        "version" : "5.6.0"
+      }
+    },
+    {
+      "identity" : "then",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/devxoul/Then.git",
+      "state" : {
+        "revision" : "d41ef523faef0f911369f79c0b96815d9dbb6d7a",
+        "version" : "3.0.0"
+      }
+    }
+  ],
+  "version" : 2
 }
