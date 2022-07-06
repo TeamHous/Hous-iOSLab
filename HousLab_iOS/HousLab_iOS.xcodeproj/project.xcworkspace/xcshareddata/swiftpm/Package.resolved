@@ -11,6 +11,15 @@
         }
       },
       {
+        "package": "RxSwift",
+        "repositoryURL": "https://github.com/ReactiveX/RxSwift",
+        "state": {
+          "branch": "main",
+          "revision": "e0ab8c4e18baf6679a65b325155923276b832687",
+          "version": null
+        }
+      },
+      {
         "package": "SnapKit",
         "repositoryURL": "https://github.com/SnapKit/SnapKit.git",
         "state": {
