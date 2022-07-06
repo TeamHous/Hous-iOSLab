@@ -9,23 +9,28 @@ import UIKit
 import SnapKit
 import Then
 
-enum TabType {
-    case main, rules, profile
+enum TabType: String {
+    case main = "Hous-"
+    case rules = "Hous- 규칙"
+    case profile = "Hous- ME"
 }
 
 class MainTabNavigationView: UIView {
     
-    var tabType: TabType = .main
+    //var tabType: TabType = .main
     private var titleLabel = UILabel().then {
         $0.font = .systemFont(ofSize: 25)
         $0.text = "Hous-"
     }
     
+    convenience init(tabType: TabType) {
+        self.init(frame: .zero)
+        render()
+        configure(tabType)
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        render()
-        configure()
     }
     
     required init?(coder: NSCoder) {
@@ -42,14 +47,7 @@ class MainTabNavigationView: UIView {
         }
     }
     
-    private func configure() {
-        switch tabType {
-        case .main:
-            titleLabel.text = "Hous-"
-        case .rules:
-            titleLabel.text = "Hous- 규칙"
-        case .profile:
-            titleLabel.text = "Hous- ME"
-        }
+    private func configure(_ tabType: TabType) {
+        titleLabel.text = tabType.rawValue
     }
 }
