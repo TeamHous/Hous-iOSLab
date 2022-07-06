@@ -18,7 +18,6 @@
 		B85302C12872A1EC00F06234 /* HoseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85302C02872A1EC00F06234 /* HoseViewController.swift */; };
 		B85302C32872A1F900F06234 /* EuiJinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85302C22872A1F900F06234 /* EuiJinViewController.swift */; };
 		B85302C52872A1FF00F06234 /* MinJaeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85302C42872A1FF00F06234 /* MinJaeViewController.swift */; };
-		B85302C72872A20600F06234 /* JiHyeonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85302C62872A20600F06234 /* JiHyeonViewController.swift */; };
 		B88908122873F81000B88985 /* RulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88908112873F81000B88985 /* RulesViewController.swift */; };
 		B88908142873FA9D00B88985 /* MainTabNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88908132873FA9D00B88985 /* MainTabNavigationView.swift */; };
 		B889081628742A2700B88985 /* RulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B889081528742A2700B88985 /* RulesView.swift */; };
@@ -27,6 +26,7 @@
 		B889081E2874463800B88985 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B889081D2874463800B88985 /* UIColor+.swift */; };
 		B889082028744B3700B88985 /* TodayTodoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B889081F28744B3700B88985 /* TodayTodoCollectionViewCell.swift */; };
 		B88908232874505D00B88985 /* ImageLiteral.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88908222874505D00B88985 /* ImageLiteral.swift */; };
+		B8AFC1332875799B00487FA5 /* MyTodoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AFC1322875799B00487FA5 /* MyTodoCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,7 +40,6 @@
 		B85302C02872A1EC00F06234 /* HoseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoseViewController.swift; sourceTree = "<group>"; };
 		B85302C22872A1F900F06234 /* EuiJinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EuiJinViewController.swift; sourceTree = "<group>"; };
 		B85302C42872A1FF00F06234 /* MinJaeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinJaeViewController.swift; sourceTree = "<group>"; };
-		B85302C62872A20600F06234 /* JiHyeonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JiHyeonViewController.swift; sourceTree = "<group>"; };
 		B88908112873F81000B88985 /* RulesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesViewController.swift; sourceTree = "<group>"; };
 		B88908132873FA9D00B88985 /* MainTabNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabNavigationView.swift; sourceTree = "<group>"; };
 		B889081528742A2700B88985 /* RulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesView.swift; sourceTree = "<group>"; };
@@ -49,6 +48,7 @@
 		B889081D2874463800B88985 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		B889081F28744B3700B88985 /* TodayTodoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayTodoCollectionViewCell.swift; sourceTree = "<group>"; };
 		B88908222874505D00B88985 /* ImageLiteral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLiteral.swift; sourceTree = "<group>"; };
+		B8AFC1322875799B00487FA5 /* MyTodoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTodoCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +101,6 @@
 				B88908212874504C00B88985 /* Literal */,
 				B88908182874409C00B88985 /* Extension */,
 				B88908102873F7DC00B88985 /* Rules */,
-				B85302C62872A20600F06234 /* JiHyeonViewController.swift */,
 				B88908132873FA9D00B88985 /* MainTabNavigationView.swift */,
 			);
 			path = JiHyeon;
@@ -161,9 +160,10 @@
 		B88908102873F7DC00B88985 /* Rules */ = {
 			isa = PBXGroup;
 			children = (
+				B8AFC1362875A26F00487FA5 /* Controller */,
+				B8AFC13528758BAD00487FA5 /* ViewModel */,
+				B8AFC13428758B9F00487FA5 /* View */,
 				B889081728742D3F00B88985 /* Cell */,
-				B88908112873F81000B88985 /* RulesViewController.swift */,
-				B889081528742A2700B88985 /* RulesView.swift */,
 			);
 			path = Rules;
 			sourceTree = "<group>";
@@ -173,6 +173,7 @@
 			children = (
 				B889081B2874438800B88985 /* CategoryCollectionViewCell.swift */,
 				B889081F28744B3700B88985 /* TodayTodoCollectionViewCell.swift */,
+				B8AFC1322875799B00487FA5 /* MyTodoCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -192,6 +193,29 @@
 				B88908222874505D00B88985 /* ImageLiteral.swift */,
 			);
 			path = Literal;
+			sourceTree = "<group>";
+		};
+		B8AFC13428758B9F00487FA5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B889081528742A2700B88985 /* RulesView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B8AFC13528758BAD00487FA5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B8AFC1362875A26F00487FA5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B88908112873F81000B88985 /* RulesViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,7 +300,6 @@
 			files = (
 				B85302C52872A1FF00F06234 /* MinJaeViewController.swift in Sources */,
 				B85302AA28728F6300F06234 /* ViewController.swift in Sources */,
-				B85302C72872A20600F06234 /* JiHyeonViewController.swift in Sources */,
 				B85302C12872A1EC00F06234 /* HoseViewController.swift in Sources */,
 				B88908232874505D00B88985 /* ImageLiteral.swift in Sources */,
 				B889081C2874438800B88985 /* CategoryCollectionViewCell.swift in Sources */,
@@ -286,6 +309,7 @@
 				B889081628742A2700B88985 /* RulesView.swift in Sources */,
 				B88908142873FA9D00B88985 /* MainTabNavigationView.swift in Sources */,
 				B889081A287440A800B88985 /* UIView+.swift in Sources */,
+				B8AFC1332875799B00487FA5 /* MyTodoCollectionViewCell.swift in Sources */,
 				B889081E2874463800B88985 /* UIColor+.swift in Sources */,
 				B88908122873F81000B88985 /* RulesViewController.swift in Sources */,
 				B85302A828728F6300F06234 /* SceneDelegate.swift in Sources */,

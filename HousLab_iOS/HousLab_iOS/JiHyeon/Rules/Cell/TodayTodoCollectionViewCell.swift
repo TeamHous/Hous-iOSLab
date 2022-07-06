@@ -32,13 +32,12 @@ class TodayTodoCollectionViewCell: UICollectionViewCell {
         $0.setImage(ImageLiteral.todayTodoManager, for: .normal)
     }
     var doneCheckBoxImageView = UIImageView().then {
-        $0.image = ImageLiteral.doneCheckBox
+        $0.image = ImageLiteral.todayTodoCheckedBox
         //$0.isHidden = true
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-
         render()
         configure()
     }
