@@ -9,6 +9,8 @@ import UIKit
 
 class HeaderCollectionReusableView: UICollectionReusableView {
     
+    static let identifier = "HeaderCollectionReusableView"
+    
     let subtitleLabel = UILabel().then {
         $0.text = "Coming up-"
         $0.font = .systemFont(ofSize: 20, weight: .semibold)

@@ -7,6 +7,11 @@
 
 import UIKit
 
+protocol ComingEventsCollectionViewCellDelegate: AnyObject {
+    func showPopup(_ row: Int)
+}
+
+
 class ComingEventsCollectionViewCell: UICollectionViewCell {
     
     private enum Size {
@@ -14,6 +19,8 @@ class ComingEventsCollectionViewCell: UICollectionViewCell {
         static let addEventCellSize = CGSize(width: 72, height: 88)
         static let eventCellSize = CGSize(width: 88, height: 88)
     }
+    
+    weak var delegate: ComingEventsCollectionViewCellDelegate?
     
     private let subtitleLabel = UILabel().then {
         $0.text = "Coming up-"
@@ -44,13 +51,14 @@ class ComingEventsCollectionViewCell: UICollectionViewCell {
         
         subtitleLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(5)
-            make.leading.equalToSuperview().offset(24)
+            make.leading.equalToSuperview().inset(24)
         }
         
         incomingEventsCollectionView.snp.makeConstraints { make in
             make.top.equalTo(subtitleLabel.snp.bottom).offset(12)
-            make.leading.trailing.equalToSuperview()
-            make.bottom.equalToSuperview().inset(24)
+            make.leading.equalToSuperview().inset(24)
+            make.bottom.equalToSuperview()
+            make.trailing.equalToSuperview()
         }
     }
     
@@ -66,14 +74,14 @@ class ComingEventsCollectionViewCell: UICollectionViewCell {
 
 extension ComingEventsCollectionViewCell: UICollectionViewDelegate {
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        delegate?.showPopup(indexPath.row)
+    }
+    
 }
 
 extension ComingEventsCollectionViewCell: UICollectionViewDataSource {
-    
-//    func numberOfSections(in collectionView: UICollectionView) -> Int {
-//        return 1
-//    }
-    
+        
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return EventDataModel.sampleData.count + 1
     }
@@ -112,7 +120,7 @@ extension ComingEventsCollectionViewCell: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 5, left: 0, bottom: 0, right: 0)
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

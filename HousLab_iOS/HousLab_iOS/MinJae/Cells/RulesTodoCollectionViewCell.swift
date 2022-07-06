@@ -27,10 +27,12 @@ class RulesTodoCollectionViewCell: UICollectionViewCell {
     
     private lazy var ruleLabelStackView = UIStackView(arrangedSubviews: [ruleLabel1, ruleLabel2, ruleLabel3, ruleLabel4, ruleLabel5]).then {
         $0.axis = .vertical
-        $0.alignment = .center
+        $0.alignment = .leading
         $0.distribution = .fillEqually
         $0.spacing = 8
     }
+    
+    private let ruleBackground = UIView()
     
     private lazy var ruleStackView = UIStackView(arrangedSubviews: [ruleTitleLabel, ruleLabelStackView]).then {
         $0.axis = .vertical
@@ -53,9 +55,11 @@ class RulesTodoCollectionViewCell: UICollectionViewCell {
     
     private let todoLabel5 = RulesTodosView()
     
+    private let todoBackground = UIView()
+    
     private lazy var todoLabelStackView = UIStackView(arrangedSubviews: [todoLabel1, todoLabel2, todoLabel3, todoLabel4, todoLabel5]).then {
         $0.axis = .vertical
-        $0.alignment = .center
+        $0.alignment = .leading
         $0.distribution = .fillEqually
         $0.spacing = 8
     }
@@ -76,6 +80,7 @@ class RulesTodoCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         render()
+        configUI()
     }
     
     required init?(coder: NSCoder) {
@@ -83,10 +88,51 @@ class RulesTodoCollectionViewCell: UICollectionViewCell {
     }
     
     private func render() {
-        addSubview(totalStackView)
-        totalStackView.snp.makeConstraints { make in
-            make.top.bottom.leading.trailing.equalToSuperview()
+        addSubViews([ruleTitleLabel,ruleBackground, todoTitleLabel, todoBackground])
+        ruleBackground.addSubview(ruleLabelStackView)
+        todoBackground.addSubview(todoLabelStackView)
+        
+        ruleTitleLabel.snp.makeConstraints { make in
+            make.top.equalToSuperview()
+            make.leading.equalToSuperview().offset(24)
         }
+        
+        ruleBackground.snp.makeConstraints { make in
+            make.top.equalTo(ruleTitleLabel.snp.bottom).offset(12)
+            make.leading.equalTo(ruleTitleLabel.snp.leading)
+            make.bottom.equalToSuperview()
+            make.width.equalTo(156)
+        }
+        
+        ruleLabelStackView.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+        }
+        
+        todoTitleLabel.snp.makeConstraints { make in
+            make.centerY.equalTo(ruleTitleLabel)
+            make.leading.equalTo(ruleBackground.snp.trailing).offset(15)
+        }
+        
+        todoBackground.snp.makeConstraints { make in
+            make.top.equalTo(todoTitleLabel.snp.bottom).offset(12)
+            make.leading.equalTo(todoTitleLabel.snp.leading)
+            make.bottom.equalToSuperview()
+            make.trailing.equalToSuperview().inset(24)
+            make.width.equalTo(156)
+        }
+        
+        todoLabelStackView.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+        }
+        
+    }
+    
+    private func configUI() {
+        ruleBackground.backgroundColor = UIColor(hex: "EFF5FF")
+        todoBackground.backgroundColor = UIColor(hex: "EFF5FF")
+        
+        ruleBackground.layer.cornerRadius = 16
+        todoBackground.layer.cornerRadius = 16
     }
     
     func setRulesData(_ data: [RulesDataModel]) {
