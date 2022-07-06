@@ -16,6 +16,9 @@ extension UIColor {
     static var hous_blue_bg2: UIColor {
         return UIColor(hex: "#CCE1FF")
     }
+    static var hous_purple_bg: UIColor {
+        return UIColor(hex: "F9F1FF")
+    }
 }
 
 extension UIColor {
