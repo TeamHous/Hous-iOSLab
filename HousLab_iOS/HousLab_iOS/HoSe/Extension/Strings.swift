@@ -35,6 +35,8 @@ extension String {
 extension String {
   struct Home {
     static let HomeHI = HousLocalizedString("HomeHI", comment: "그냥 테스트용", lastUpdated: .v01)
+    // 다국어 지원안하고 걍 일단 밸류값 때려넣을 수도 있음 (string 한번에 모아두기)
+    static let HomeBye = HousLocalizedString("HomeBye", value: "그냥 바이", comment: "그냥테스트용2", lastUpdated: .v01)
   }
   struct Profile {
 //    static let sdgsdfgsg = HousLocalizedString("adsd", comment: "그냥 테스트용", lastUpdated: .v01)

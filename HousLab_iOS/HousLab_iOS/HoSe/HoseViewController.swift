@@ -11,7 +11,7 @@ final class HoseViewController: UIViewController {
 
   private let helloworldLabel: UILabel = {
     let label = UILabel()
-    label.text = String.Home.HomeHI
+    label.text = String.Home.HomeBye
     label.backgroundColor = .white
     label.font = .systemFont(ofSize: 20, weight: .bold)
     label.textColor = .black

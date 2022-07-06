@@ -16,6 +16,8 @@
 		770E2C6E28759A8A00E2F112 /* CustomTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770E2C6D28759A8A00E2F112 /* CustomTabbarController.swift */; };
 		770E2C7028759BF400E2F112 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770E2C6F28759BF400E2F112 /* Strings.swift */; };
 		770E2C7328759D9C00E2F112 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 770E2C7528759D9C00E2F112 /* Localizable.strings */; };
+		770E2C792875A21900E2F112 /* CompCollectionVIewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770E2C782875A21900E2F112 /* CompCollectionVIewController.swift */; };
+		770E2C7B2875A3A100E2F112 /* TestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770E2C7A2875A3A100E2F112 /* TestCell.swift */; };
 		7713C62B2872F26C00F674BF /* Inject in Frameworks */ = {isa = PBXBuildFile; productRef = 7713C62A2872F26C00F674BF /* Inject */; };
 		B5B5C11D2872E3DB00FC5134 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B5B5C11C2872E3DB00FC5134 /* SnapKit */; };
 		B5B5C1202872E43E00FC5134 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = B5B5C11F2872E43E00FC5134 /* Then */; };
@@ -39,6 +41,8 @@
 		770E2C7428759D9C00E2F112 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		770E2C7628759DD200E2F112 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		770E2C7728759DD200E2F112 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
+		770E2C782875A21900E2F112 /* CompCollectionVIewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompCollectionVIewController.swift; sourceTree = "<group>"; };
+		770E2C7A2875A3A100E2F112 /* TestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCell.swift; sourceTree = "<group>"; };
 		B85302A228728F6300F06234 /* HousLab_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HousLab_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B85302A528728F6300F06234 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B85302A728728F6300F06234 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -143,6 +147,8 @@
 				B85302C02872A1EC00F06234 /* HoseViewController.swift */,
 				770E2C66287490FC00E2F112 /* CustomTabBar.swift */,
 				770E2C682874913600E2F112 /* CustomItemView.swift */,
+				770E2C782875A21900E2F112 /* CompCollectionVIewController.swift */,
+				770E2C7A2875A3A100E2F112 /* TestCell.swift */,
 			);
 			path = HoSe;
 			sourceTree = "<group>";
@@ -261,11 +267,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B85302C52872A1FF00F06234 /* MinJaeViewController.swift in Sources */,
+				770E2C792875A21900E2F112 /* CompCollectionVIewController.swift in Sources */,
 				B85302AA28728F6300F06234 /* ViewController.swift in Sources */,
 				B85302C72872A20600F06234 /* JiHyeonViewController.swift in Sources */,
 				770E2C692874913600E2F112 /* CustomItemView.swift in Sources */,
 				B85302C12872A1EC00F06234 /* HoseViewController.swift in Sources */,
 				770E2C67287490FC00E2F112 /* CustomTabBar.swift in Sources */,
+				770E2C7B2875A3A100E2F112 /* TestCell.swift in Sources */,
 				770E2C6E28759A8A00E2F112 /* CustomTabbarController.swift in Sources */,
 				B85302A628728F6300F06234 /* AppDelegate.swift in Sources */,
 				B85302C32872A1F900F06234 /* EuiJinViewController.swift in Sources */,
