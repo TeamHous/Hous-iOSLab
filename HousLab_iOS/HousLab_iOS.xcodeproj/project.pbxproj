@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		770E2C6128748D9F00E2F112 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 770E2C6028748D9F00E2F112 /* RxCocoa */; };
+		770E2C6328748D9F00E2F112 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 770E2C6228748D9F00E2F112 /* RxRelay */; };
+		770E2C6528748D9F00E2F112 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 770E2C6428748D9F00E2F112 /* RxSwift */; };
+		770E2C67287490FC00E2F112 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770E2C66287490FC00E2F112 /* CustomTabBar.swift */; };
+		770E2C692874913600E2F112 /* CustomItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770E2C682874913600E2F112 /* CustomItemView.swift */; };
+		770E2C6C287597E000E2F112 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770E2C6B287597E000E2F112 /* Asset.swift */; };
+		770E2C6E28759A8A00E2F112 /* CustomTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770E2C6D28759A8A00E2F112 /* CustomTabbarController.swift */; };
+		770E2C7028759BF400E2F112 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770E2C6F28759BF400E2F112 /* Strings.swift */; };
+		770E2C7328759D9C00E2F112 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 770E2C7528759D9C00E2F112 /* Localizable.strings */; };
 		7713C62B2872F26C00F674BF /* Inject in Frameworks */ = {isa = PBXBuildFile; productRef = 7713C62A2872F26C00F674BF /* Inject */; };
 		B5B5C11D2872E3DB00FC5134 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B5B5C11C2872E3DB00FC5134 /* SnapKit */; };
 		B5B5C1202872E43E00FC5134 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = B5B5C11F2872E43E00FC5134 /* Then */; };
@@ -22,6 +31,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		770E2C66287490FC00E2F112 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		770E2C682874913600E2F112 /* CustomItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomItemView.swift; sourceTree = "<group>"; };
+		770E2C6B287597E000E2F112 /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
+		770E2C6D28759A8A00E2F112 /* CustomTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabbarController.swift; sourceTree = "<group>"; };
+		770E2C6F28759BF400E2F112 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		770E2C7428759D9C00E2F112 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		770E2C7628759DD200E2F112 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		770E2C7728759DD200E2F112 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B85302A228728F6300F06234 /* HousLab_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HousLab_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B85302A528728F6300F06234 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B85302A728728F6300F06234 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -40,8 +57,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				770E2C6528748D9F00E2F112 /* RxSwift in Frameworks */,
+				770E2C6328748D9F00E2F112 /* RxRelay in Frameworks */,
 				B5B5C11D2872E3DB00FC5134 /* SnapKit in Frameworks */,
 				B5B5C1202872E43E00FC5134 /* Then in Frameworks */,
+				770E2C6128748D9F00E2F112 /* RxCocoa in Frameworks */,
 				7713C62B2872F26C00F674BF /* Inject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -49,13 +69,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		770E2C6A287597D200E2F112 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				770E2C6B287597E000E2F112 /* Asset.swift */,
+				770E2C6F28759BF400E2F112 /* Strings.swift */,
+				770E2C7528759D9C00E2F112 /* Localizable.strings */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		B853029928728F6300F06234 = {
 			isa = PBXGroup;
 			children = (
 				B85302A428728F6300F06234 /* HousLab_iOS */,
 				B85302A328728F6300F06234 /* Products */,
 			);
+			indentWidth = 2;
 			sourceTree = "<group>";
+			tabWidth = 2;
 		};
 		B85302A328728F6300F06234 /* Products */ = {
 			isa = PBXGroup;
@@ -106,7 +138,11 @@
 		B85302BC28728FA400F06234 /* HoSe */ = {
 			isa = PBXGroup;
 			children = (
+				770E2C6D28759A8A00E2F112 /* CustomTabbarController.swift */,
+				770E2C6A287597D200E2F112 /* Extension */,
 				B85302C02872A1EC00F06234 /* HoseViewController.swift */,
+				770E2C66287490FC00E2F112 /* CustomTabBar.swift */,
+				770E2C682874913600E2F112 /* CustomItemView.swift */,
 			);
 			path = HoSe;
 			sourceTree = "<group>";
@@ -158,6 +194,9 @@
 				B5B5C11C2872E3DB00FC5134 /* SnapKit */,
 				B5B5C11F2872E43E00FC5134 /* Then */,
 				7713C62A2872F26C00F674BF /* Inject */,
+				770E2C6028748D9F00E2F112 /* RxCocoa */,
+				770E2C6228748D9F00E2F112 /* RxRelay */,
+				770E2C6428748D9F00E2F112 /* RxSwift */,
 			);
 			productName = HousLab_iOS;
 			productReference = B85302A228728F6300F06234 /* HousLab_iOS.app */;
@@ -185,12 +224,14 @@
 			knownRegions = (
 				en,
 				Base,
+				ko,
 			);
 			mainGroup = B853029928728F6300F06234;
 			packageReferences = (
 				B5B5C11B2872E3DB00FC5134 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				B5B5C11E2872E43E00FC5134 /* XCRemoteSwiftPackageReference "Then" */,
 				7713C6292872F26C00F674BF /* XCRemoteSwiftPackageReference "Inject" */,
+				770E2C5F28748D9F00E2F112 /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = B85302A328728F6300F06234 /* Products */;
 			projectDirPath = "";
@@ -207,6 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B85302B228728F6400F06234 /* LaunchScreen.storyboard in Resources */,
+				770E2C7328759D9C00E2F112 /* Localizable.strings in Resources */,
 				B85302AF28728F6400F06234 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,20 +263,35 @@
 				B85302C52872A1FF00F06234 /* MinJaeViewController.swift in Sources */,
 				B85302AA28728F6300F06234 /* ViewController.swift in Sources */,
 				B85302C72872A20600F06234 /* JiHyeonViewController.swift in Sources */,
+				770E2C692874913600E2F112 /* CustomItemView.swift in Sources */,
 				B85302C12872A1EC00F06234 /* HoseViewController.swift in Sources */,
+				770E2C67287490FC00E2F112 /* CustomTabBar.swift in Sources */,
+				770E2C6E28759A8A00E2F112 /* CustomTabbarController.swift in Sources */,
 				B85302A628728F6300F06234 /* AppDelegate.swift in Sources */,
 				B85302C32872A1F900F06234 /* EuiJinViewController.swift in Sources */,
 				B85302A828728F6300F06234 /* SceneDelegate.swift in Sources */,
+				770E2C7028759BF400E2F112 /* Strings.swift in Sources */,
+				770E2C6C287597E000E2F112 /* Asset.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		770E2C7528759D9C00E2F112 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				770E2C7428759D9C00E2F112 /* en */,
+				770E2C7728759DD200E2F112 /* ko */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		B85302B028728F6400F06234 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				B85302B128728F6400F06234 /* Base */,
+				770E2C7628759DD200E2F112 /* ko */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -246,6 +303,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -313,6 +371,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -448,6 +507,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		770E2C5F28748D9F00E2F112 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		7713C6292872F26C00F674BF /* XCRemoteSwiftPackageReference "Inject" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/krzysztofzablocki/Inject.git";
@@ -475,6 +542,21 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		770E2C6028748D9F00E2F112 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 770E2C5F28748D9F00E2F112 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		770E2C6228748D9F00E2F112 /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 770E2C5F28748D9F00E2F112 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		770E2C6428748D9F00E2F112 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 770E2C5F28748D9F00E2F112 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
 		7713C62A2872F26C00F674BF /* Inject */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 7713C6292872F26C00F674BF /* XCRemoteSwiftPackageReference "Inject" */;
