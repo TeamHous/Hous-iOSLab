@@ -22,7 +22,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
         window.backgroundColor = .white
         // MARK: - ViewControllerHost에 Hot reload 하고 싶은 ViewController instance를 넣기
-        window.rootViewController = Inject.ViewControllerHost(CompCollectionVIewController())
+        window.rootViewController = Inject.ViewControllerHost(RulesViewController())
+        //window.rootViewController = Inject.ViewControllerHost(CompCollectionVIewController())
 //        window.rootViewController = ViewController()
         window.makeKeyAndVisible()
         self.window = window
