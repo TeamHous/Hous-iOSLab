@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		7713C62B2872F26C00F674BF /* Inject in Frameworks */ = {isa = PBXBuildFile; productRef = 7713C62A2872F26C00F674BF /* Inject */; };
 		9B875C3B287495270084F660 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B875C3A287495270084F660 /* ProfileViewController.swift */; };
-		9B875C3D287496840084F660 /* ProfileSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B875C3C287496840084F660 /* ProfileSubView.swift */; };
+		9B875C3D287496840084F660 /* ProfileSubView_Form.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B875C3C287496840084F660 /* ProfileSubView_Form.swift */; };
 		9BC992C52875D1C000E7E895 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC992C42875D1C000E7E895 /* Preview.swift */; };
 		9BC992C72875FFA300E7E895 /* ProfileSubCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC992C62875FFA300E7E895 /* ProfileSubCollectionViewCell.swift */; };
 		9BF2CF5D28758E95001AA51C /* EuiJinBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF2CF5C28758E95001AA51C /* EuiJinBaseView.swift */; };
@@ -28,7 +28,7 @@
 
 /* Begin PBXFileReference section */
 		9B875C3A287495270084F660 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		9B875C3C287496840084F660 /* ProfileSubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSubView.swift; sourceTree = "<group>"; };
+		9B875C3C287496840084F660 /* ProfileSubView_Form.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSubView_Form.swift; sourceTree = "<group>"; };
 		9BC992C42875D1C000E7E895 /* Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
 		9BC992C62875FFA300E7E895 /* ProfileSubCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSubCollectionViewCell.swift; sourceTree = "<group>"; };
 		9BF2CF5C28758E95001AA51C /* EuiJinBaseView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = EuiJinBaseView.swift; sourceTree = "<group>"; tabWidth = 2; };
@@ -113,7 +113,7 @@
 				9BF2CF5C28758E95001AA51C /* EuiJinBaseView.swift */,
 				9B875C3A287495270084F660 /* ProfileViewController.swift */,
 				9BC992C62875FFA300E7E895 /* ProfileSubCollectionViewCell.swift */,
-				9B875C3C287496840084F660 /* ProfileSubView.swift */,
+				9B875C3C287496840084F660 /* ProfileSubView_Form.swift */,
 			);
 			path = EuiJin;
 			sourceTree = "<group>";
@@ -240,7 +240,7 @@
 				B85302C12872A1EC00F06234 /* HoseViewController.swift in Sources */,
 				9BC992C52875D1C000E7E895 /* Preview.swift in Sources */,
 				B85302A628728F6300F06234 /* AppDelegate.swift in Sources */,
-				9B875C3D287496840084F660 /* ProfileSubView.swift in Sources */,
+				9B875C3D287496840084F660 /* ProfileSubView_Form.swift in Sources */,
 				B85302C32872A1F900F06234 /* EuiJinViewController.swift in Sources */,
 				9BF2CF5D28758E95001AA51C /* EuiJinBaseView.swift in Sources */,
 				B85302A828728F6300F06234 /* SceneDelegate.swift in Sources */,
