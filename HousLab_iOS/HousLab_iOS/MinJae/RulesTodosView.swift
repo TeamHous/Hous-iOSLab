@@ -23,6 +23,8 @@ class RulesTodosView: UIView {
     private let ruleLabel = UILabel().then {
         $0.font = .systemFont(ofSize: 13, weight: .medium)
         $0.lineBreakMode = .byWordWrapping
+        $0.lineBreakStrategy = .hangulWordPriority
+        $0.textAlignment = .left
         $0.numberOfLines = 0
     }
     
@@ -53,6 +55,7 @@ class RulesTodosView: UIView {
         
         ruleLabel.snp.makeConstraints {
             $0.leading.equalTo(circleImageView.snp.trailing).offset(8)
+            $0.trailing.equalToSuperview()
         }
         
         stackView.snp.makeConstraints {
@@ -62,5 +65,9 @@ class RulesTodosView: UIView {
     
     func setRulesLabelData(rule: String) {
         ruleLabel.text = rule
+    }
+    
+    func setCheckButton(_ isDone: Bool) {
+        checkButton.isSelected = isDone
     }
 }

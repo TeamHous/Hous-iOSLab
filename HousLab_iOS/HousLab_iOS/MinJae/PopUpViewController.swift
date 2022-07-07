@@ -11,6 +11,13 @@ import Then
 
 class PopUpViewController: UIViewController {
     
+    private lazy var blurView = UIVisualEffectView().then {
+        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
+        $0.effect = blurEffect
+        $0.frame = view.bounds
+        $0.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+    }
+    
     private let popUpView = UIView().then {
         $0.backgroundColor = .white
         $0.layer.cornerRadius = 20
@@ -40,7 +47,7 @@ class PopUpViewController: UIViewController {
         config.baseBackgroundColor = .white
         $0.configuration = config
         
-        $0.addTarget(PopUpViewController.self, action: #selector(cancelButtonDidTapped), for: .touchUpInside)
+        $0.addTarget(self, action: #selector(cancelButtonDidTapped), for: .touchUpInside)
         
         $0.layer.borderColor = UIColor.red.cgColor
         $0.layer.borderWidth = 1
@@ -60,28 +67,22 @@ class PopUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         render()
-        configUI()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         
-        if let touch = touches.first, touch.view == self.view {
+        if let touch = touches.first, touch.view == self.blurView {
             dismiss(animated: true)
         }
     }
-    
-    @objc
-    private func cancelButtonDidTapped() {
+
+    @objc private func cancelButtonDidTapped() {
         self.dismiss(animated: true)
     }
-    
-    private func configUI() {
-        view.backgroundColor = .black.withAlphaComponent(0.4)
         
-    }
-    
     private func render() {
+        self.view.addSubview(blurView)
         self.view.addSubview(popUpView)
         popUpView.addSubViews([titleLabel, eventImageView, buttonStackView])
         

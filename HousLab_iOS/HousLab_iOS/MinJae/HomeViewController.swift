@@ -14,7 +14,8 @@ class HomeViewController: UIViewController {
     
     private enum Size {
         static let screenWidth = UIScreen.main.bounds.width
-        static let profileCellSize = CGSize(width: 156, height: 156)
+        static let eventCellSize = CGSize(width: Size.screenWidth, height: 88)
+        static let profileCellSize = CGSize(width: 103, height: 103)
     }
     
     //MARK: Properties
@@ -31,17 +32,12 @@ class HomeViewController: UIViewController {
     private let homeCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout()).then {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
+        layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         $0.collectionViewLayout = layout
         $0.showsVerticalScrollIndicator = false
+        
     }
     
-    private let profileCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout()).then {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        $0.collectionViewLayout = layout
-        $0.showsVerticalScrollIndicator = false
-    }
-
     //MARK: LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,7 +53,7 @@ class HomeViewController: UIViewController {
     }
     
     private func setCollectionView() {
-//        homeCollectionView.register(HeaderCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderCollectionReusableView.className)
+        homeCollectionView.register(HeaderCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderCollectionReusableView.className)
         
         homeCollectionView.register(cell: ComingEventsCollectionViewCell.self)
         homeCollectionView.register(cell: RulesTodoCollectionViewCell.self)
@@ -92,9 +88,14 @@ extension HomeViewController: UICollectionViewDelegate {
         return 3
     }
     
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-//        return CGSize(width: view.frame.size.width, height: 24)
-//    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        if section == 0 || section == 2 {
+            return CGSize(width: view.frame.size.width, height: 24)
+        }
+        
+        return CGSize.zero
+        
+    }
 }
 
 extension HomeViewController: UICollectionViewDataSource {
@@ -148,18 +149,23 @@ extension HomeViewController: UICollectionViewDataSource {
         }
     }
     
-//    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-//        if kind == UICollectionView.elementKindSectionHeader {
-//            guard let header = homeCollectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "HeaderCollectionReusableView", for: indexPath) as? HeaderCollectionReusableView else { return UICollectionReusableView() }
-//
-//            if indexPath.section == 2 {
-//                header.setSubTitleLabel(data: "Homie Profile-")
-//                return header
-//            }
-//        }
-//
-//        return UICollectionReusableView()
-//    }
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        if kind == UICollectionView.elementKindSectionHeader {
+            guard let header = homeCollectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderCollectionReusableView.className, for: indexPath) as? HeaderCollectionReusableView else { return UICollectionReusableView() }
+            
+            switch indexPath.section {
+            case 0:
+                header.setSubTitleLabel(data: "Coming up-")
+            case 2:
+                header.setSubTitleLabel(data: "Homie Profile-")
+            default:
+                return UICollectionReusableView()
+            }
+            
+            return header
+        }
+        return UICollectionReusableView()
+    }
 }
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
@@ -169,9 +175,9 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
         switch indexPath.section {
             // 이거 동적으로 collection 높이
         case 0:
-            return CGSize(width: Size.screenWidth, height: 153)
+            return Size.eventCellSize
         case 1:
-            return CGSize(width: Size.screenWidth, height: 180)
+            return CGSize(width: Size.screenWidth, height: 200)
         case 2:
             return Size.profileCellSize
         default:
@@ -183,11 +189,11 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
         
         switch section {
         case 0:
-            return UIEdgeInsets(top: 5, left: 0, bottom: 0, right: 0)
+            return UIEdgeInsets(top: 12, left: 0, bottom: 24, right: 0)
         case 1:
-            return UIEdgeInsets(top: 3, left: 24, bottom: 0, right: 24)
+            return UIEdgeInsets(top: 3, left: 0, bottom: 24, right: 0)
         case 2:
-            return UIEdgeInsets(top: 3, left: 24, bottom: 0, right: 24)
+            return UIEdgeInsets(top: 12, left: 24, bottom: 0, right: 24)
         default:
             return UIEdgeInsets()
         }
@@ -201,7 +207,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
         case 1:
             return 0
         case 2:
-            return 15
+            return 12
         default:
             return 0
         }
@@ -216,7 +222,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
         case 1:
             return 0
         case 2:
-            return 15
+            return 9
         default:
             return 0
         }

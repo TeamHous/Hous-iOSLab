@@ -12,7 +12,6 @@ class HeaderCollectionReusableView: UICollectionReusableView {
     static let identifier = "HeaderCollectionReusableView"
     
     let subtitleLabel = UILabel().then {
-        $0.text = "Coming up-"
         $0.font = .systemFont(ofSize: 20, weight: .semibold)
         $0.textAlignment = .left
     }
@@ -29,12 +28,17 @@ class HeaderCollectionReusableView: UICollectionReusableView {
     private func render() {
         addSubview(subtitleLabel)
         subtitleLabel.snp.makeConstraints { make in
-            make.top.leading.trailing.bottom.equalToSuperview()
+            make.leading.equalToSuperview().offset(24)
+            make.top.trailing.bottom.equalToSuperview()
         }
     }
     
     func setSubTitleLabel(data: String) {
         subtitleLabel.text = data
     }
+    
+}
+
+class EmptyCollectionResusableView: UICollectionReusableView {
     
 }

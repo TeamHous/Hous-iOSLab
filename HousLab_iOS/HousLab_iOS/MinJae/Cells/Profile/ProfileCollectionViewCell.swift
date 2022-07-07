@@ -32,12 +32,14 @@ class ProfileCollectionViewCell: UICollectionViewCell {
     }
     
     private let codeLabel = UILabel().then {
-        $0.text = "코드로 룸메이트를 초대해보세요"
-        $0.font = .systemFont(ofSize: 13, weight: .medium)
-        $0.lineBreakMode = .byCharWrapping
+        $0.text = "룸메이트 초대 코드 복사하기"
+        $0.font = .systemFont(ofSize: 12, weight: .light)
+        $0.tintColor = UIColor(hex: "C8C8C8")
+        $0.lineBreakMode = .byWordWrapping
         $0.lineBreakStrategy = .hangulWordPriority
         $0.textAlignment = .center
         $0.numberOfLines = 0
+        $0.minimumScaleFactor = 0.5
     }
     
     lazy var codeViewStack = UIStackView(arrangedSubviews: [codeImage, codeLabel]).then {
@@ -59,7 +61,7 @@ class ProfileCollectionViewCell: UICollectionViewCell {
     }
     
     private func render() {
-        addSubViews([profileStack, codeViewStack])
+        contentView.addSubViews([profileStack, codeViewStack])
         
         codeLabel.snp.makeConstraints {
             $0.width.equalTo(self.bounds.width / 2)
@@ -78,6 +80,7 @@ class ProfileCollectionViewCell: UICollectionViewCell {
     private func configUI() {
         self.backgroundColor = UIColor(hex: "FFD66D")
         layer.cornerRadius = self.bounds.width / 4
+        self.contentView.clipsToBounds = true
     }
     
     func setProfileData(_ data: ProfileDataModel) {

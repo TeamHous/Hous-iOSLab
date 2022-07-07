@@ -15,28 +15,15 @@ class RulesTodoCollectionViewCell: UICollectionViewCell {
         $0.textAlignment = .left
     }
     
-    private let ruleLabel1 = RulesTodosView()
-    
-    private let ruleLabel2 = RulesTodosView()
-    
-    private let ruleLabel3 = RulesTodosView()
-    
-    private let ruleLabel4 = RulesTodosView()
-    
-    private let ruleLabel5 = RulesTodosView()
-    
-    private lazy var ruleLabelStackView = UIStackView(arrangedSubviews: [ruleLabel1, ruleLabel2, ruleLabel3, ruleLabel4, ruleLabel5]).then {
+    private lazy var ruleLabelStackView = UIStackView().then {
         $0.axis = .vertical
         $0.alignment = .leading
         $0.distribution = .fillEqually
         $0.spacing = 8
     }
     
-    private let ruleBackground = UIView()
-    
-    private lazy var ruleStackView = UIStackView(arrangedSubviews: [ruleTitleLabel, ruleLabelStackView]).then {
-        $0.axis = .vertical
-        $0.spacing = 12
+    private let ruleBackground = UIView().then {
+        $0.clipsToBounds = true
     }
     
     private let todoTitleLabel = UILabel().then {
@@ -45,37 +32,16 @@ class RulesTodoCollectionViewCell: UICollectionViewCell {
         $0.textAlignment = .left
     }
     
-    private let todoLabel1 = RulesTodosView()
+    private let todoBackground = UIView().then {
+        $0.clipsToBounds = true
+    }
     
-    private let todoLabel2 = RulesTodosView()
-    
-    private let todoLabel3 = RulesTodosView()
-    
-    private let todoLabel4 = RulesTodosView()
-    
-    private let todoLabel5 = RulesTodosView()
-    
-    private let todoBackground = UIView()
-    
-    private lazy var todoLabelStackView = UIStackView(arrangedSubviews: [todoLabel1, todoLabel2, todoLabel3, todoLabel4, todoLabel5]).then {
+    private lazy var todoLabelStackView = UIStackView().then {
         $0.axis = .vertical
         $0.alignment = .leading
         $0.distribution = .fillEqually
         $0.spacing = 8
     }
-    
-    private lazy var todoStackView = UIStackView(arrangedSubviews: [todoTitleLabel, todoLabelStackView]).then {
-        $0.axis = .vertical
-        $0.spacing = 12
-    }
-    
-    private lazy var totalStackView = UIStackView(arrangedSubviews: [ruleStackView, todoStackView]).then {
-        $0.axis = .horizontal
-        $0.distribution = .fillEqually
-        $0.spacing = 15
-    }
-    
-    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -87,8 +53,24 @@ class RulesTodoCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
+        super.preferredLayoutAttributesFitting(layoutAttributes)
+
+        layoutIfNeeded()
+
+        let titleHeight = ruleTitleLabel.bounds.height
+        let stackViewHeight = ruleLabelStackView.bounds.height > todoLabelStackView.bounds.height ? ruleLabelStackView.bounds.height : todoLabelStackView.bounds.height
+
+        var frame = layoutAttributes.frame
+        frame.size.height = ceil(stackViewHeight + titleHeight + 24)
+//        print(frame.size.height)
+        layoutAttributes.frame = frame
+
+        return layoutAttributes
+    }
+    
     private func render() {
-        addSubViews([ruleTitleLabel,ruleBackground, todoTitleLabel, todoBackground])
+        contentView.addSubViews([ruleTitleLabel,ruleBackground, todoTitleLabel, todoBackground])
         ruleBackground.addSubview(ruleLabelStackView)
         todoBackground.addSubview(todoLabelStackView)
         
@@ -100,12 +82,12 @@ class RulesTodoCollectionViewCell: UICollectionViewCell {
         ruleBackground.snp.makeConstraints { make in
             make.top.equalTo(ruleTitleLabel.snp.bottom).offset(12)
             make.leading.equalTo(ruleTitleLabel.snp.leading)
-            make.bottom.equalToSuperview()
+//            make.bottom.equalToSuperview()
             make.width.equalTo(156)
         }
         
         ruleLabelStackView.snp.makeConstraints { make in
-            make.center.equalToSuperview()
+            make.edges.equalToSuperview().inset(10)
         }
         
         todoTitleLabel.snp.makeConstraints { make in
@@ -116,13 +98,12 @@ class RulesTodoCollectionViewCell: UICollectionViewCell {
         todoBackground.snp.makeConstraints { make in
             make.top.equalTo(todoTitleLabel.snp.bottom).offset(12)
             make.leading.equalTo(todoTitleLabel.snp.leading)
-            make.bottom.equalToSuperview()
             make.trailing.equalToSuperview().inset(24)
-            make.width.equalTo(156)
+            make.width.equalTo((UIScreen.main.bounds.width - 48 - 15) / 2)
         }
         
         todoLabelStackView.snp.makeConstraints { make in
-            make.center.equalToSuperview()
+            make.edges.equalToSuperview().inset(10)
         }
         
     }
@@ -137,30 +118,26 @@ class RulesTodoCollectionViewCell: UICollectionViewCell {
     
     func setRulesData(_ data: [RulesDataModel]) {
         
-        let labelList = [ruleLabel1, ruleLabel2, ruleLabel3, ruleLabel4, ruleLabel5]
-        
-        var index = 0
-        labelList.forEach {
-            $0.checkButton.isHidden = true
-            $0.setRulesLabelData(rule: data[index].ruleString)
+        data.forEach { item in
+            let label = RulesTodosView()
+            label.checkButton.isHidden = true
+            label.setRulesLabelData(rule: item.ruleString)
             
-            index += 1
+            ruleLabelStackView.addArrangedSubview(label)
         }
-        
     }
     
     func setTodosData(_ data: [TodoDataModel]) {
         
-        let labelList = [todoLabel1, todoLabel2, todoLabel3, todoLabel4, todoLabel5]
-        
-        var index = 0
-        labelList.forEach {
-            $0.circleImageView.isHidden = true
-            $0.setRulesLabelData(rule: data[index].todoString)
+        data.forEach { item in
+            let label = RulesTodosView()
+            label.circleImageView.isHidden = true
+            label.setRulesLabelData(rule: item.todoString)
+            label.setCheckButton(item.isDone)
             
-            index += 1
+            todoLabelStackView.addArrangedSubview(label)
+//            UITapGestureRecognizer
         }
-        
     }
     
     

@@ -38,7 +38,7 @@ class EventsCollectionViewCell: UICollectionViewCell {
     }
     
     private func render() {
-        addSubview(backgroudImageView)
+        contentView.addSubview(backgroudImageView)
         backgroudImageView.addSubview(d_dayLabel)
         backgroudImageView.addSubview(addIcon)
         

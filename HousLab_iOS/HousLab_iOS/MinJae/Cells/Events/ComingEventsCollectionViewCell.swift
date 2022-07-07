@@ -46,18 +46,10 @@ class ComingEventsCollectionViewCell: UICollectionViewCell {
     }
     
     private func render() {
-        addSubview(incomingEventsCollectionView)
-        addSubview(subtitleLabel)
-        
-        subtitleLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(5)
-            make.leading.equalToSuperview().inset(24)
-        }
-        
+        contentView.addSubview(incomingEventsCollectionView)
         incomingEventsCollectionView.snp.makeConstraints { make in
-            make.top.equalTo(subtitleLabel.snp.bottom).offset(12)
             make.leading.equalToSuperview().inset(24)
-            make.bottom.equalToSuperview()
+            make.top.bottom.equalToSuperview()
             make.trailing.equalToSuperview()
         }
     }
