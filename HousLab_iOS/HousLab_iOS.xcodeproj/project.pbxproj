@@ -10,12 +10,8 @@
 		7713C62B2872F26C00F674BF /* Inject in Frameworks */ = {isa = PBXBuildFile; productRef = 7713C62A2872F26C00F674BF /* Inject */; };
 		9B875C3B287495270084F660 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B875C3A287495270084F660 /* ProfileViewController.swift */; };
 		9B875C3D287496840084F660 /* ProfileSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B875C3C287496840084F660 /* ProfileSubView.swift */; };
-		9B875C3F287496970084F660 /* GraphSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B875C3E287496970084F660 /* GraphSubView.swift */; };
-		9B875C41287496A80084F660 /* GraphEmptySubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B875C40287496A80084F660 /* GraphEmptySubView.swift */; };
-		9B875C43287496C50084F660 /* BedgeSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B875C42287496C50084F660 /* BedgeSubView.swift */; };
 		9BC992C52875D1C000E7E895 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC992C42875D1C000E7E895 /* Preview.swift */; };
 		9BC992C72875FFA300E7E895 /* ProfileSubCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC992C62875FFA300E7E895 /* ProfileSubCollectionViewCell.swift */; };
-		9BF2CF5B28758B38001AA51C /* UIViewFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF2CF5A28758B38001AA51C /* UIViewFormat.swift */; };
 		9BF2CF5D28758E95001AA51C /* EuiJinBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF2CF5C28758E95001AA51C /* EuiJinBaseView.swift */; };
 		B5B5C11D2872E3DB00FC5134 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B5B5C11C2872E3DB00FC5134 /* SnapKit */; };
 		B5B5C1202872E43E00FC5134 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = B5B5C11F2872E43E00FC5134 /* Then */; };
@@ -33,12 +29,8 @@
 /* Begin PBXFileReference section */
 		9B875C3A287495270084F660 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		9B875C3C287496840084F660 /* ProfileSubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSubView.swift; sourceTree = "<group>"; };
-		9B875C3E287496970084F660 /* GraphSubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphSubView.swift; sourceTree = "<group>"; };
-		9B875C40287496A80084F660 /* GraphEmptySubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphEmptySubView.swift; sourceTree = "<group>"; };
-		9B875C42287496C50084F660 /* BedgeSubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BedgeSubView.swift; sourceTree = "<group>"; };
 		9BC992C42875D1C000E7E895 /* Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
 		9BC992C62875FFA300E7E895 /* ProfileSubCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSubCollectionViewCell.swift; sourceTree = "<group>"; };
-		9BF2CF5A28758B38001AA51C /* UIViewFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewFormat.swift; sourceTree = "<group>"; };
 		9BF2CF5C28758E95001AA51C /* EuiJinBaseView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = EuiJinBaseView.swift; sourceTree = "<group>"; tabWidth = 2; };
 		B85302A228728F6300F06234 /* HousLab_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HousLab_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B85302A528728F6300F06234 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -119,13 +111,9 @@
 				B85302C22872A1F900F06234 /* EuiJinViewController.swift */,
 				9BC992C42875D1C000E7E895 /* Preview.swift */,
 				9BF2CF5C28758E95001AA51C /* EuiJinBaseView.swift */,
-				9BF2CF5A28758B38001AA51C /* UIViewFormat.swift */,
 				9B875C3A287495270084F660 /* ProfileViewController.swift */,
 				9BC992C62875FFA300E7E895 /* ProfileSubCollectionViewCell.swift */,
 				9B875C3C287496840084F660 /* ProfileSubView.swift */,
-				9B875C3E287496970084F660 /* GraphSubView.swift */,
-				9B875C40287496A80084F660 /* GraphEmptySubView.swift */,
-				9B875C42287496C50084F660 /* BedgeSubView.swift */,
 			);
 			path = EuiJin;
 			sourceTree = "<group>";
@@ -246,21 +234,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B875C3B287495270084F660 /* ProfileViewController.swift in Sources */,
-				9B875C43287496C50084F660 /* BedgeSubView.swift in Sources */,
 				B85302C52872A1FF00F06234 /* MinJaeViewController.swift in Sources */,
 				B85302AA28728F6300F06234 /* ViewController.swift in Sources */,
 				B85302C72872A20600F06234 /* JiHyeonViewController.swift in Sources */,
-				9BF2CF5B28758B38001AA51C /* UIViewFormat.swift in Sources */,
 				B85302C12872A1EC00F06234 /* HoseViewController.swift in Sources */,
 				9BC992C52875D1C000E7E895 /* Preview.swift in Sources */,
 				B85302A628728F6300F06234 /* AppDelegate.swift in Sources */,
-				9B875C3F287496970084F660 /* GraphSubView.swift in Sources */,
 				9B875C3D287496840084F660 /* ProfileSubView.swift in Sources */,
 				B85302C32872A1F900F06234 /* EuiJinViewController.swift in Sources */,
 				9BF2CF5D28758E95001AA51C /* EuiJinBaseView.swift in Sources */,
 				B85302A828728F6300F06234 /* SceneDelegate.swift in Sources */,
 				9BC992C72875FFA300E7E895 /* ProfileSubCollectionViewCell.swift in Sources */,
-				9B875C41287496A80084F660 /* GraphEmptySubView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
