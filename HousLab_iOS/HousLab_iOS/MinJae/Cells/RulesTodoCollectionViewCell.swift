@@ -62,8 +62,7 @@ class RulesTodoCollectionViewCell: UICollectionViewCell {
         let stackViewHeight = ruleLabelStackView.bounds.height > todoLabelStackView.bounds.height ? ruleLabelStackView.bounds.height : todoLabelStackView.bounds.height
 
         var frame = layoutAttributes.frame
-        frame.size.height = ceil(stackViewHeight + titleHeight + 24)
-//        print(frame.size.height)
+        frame.size.height = ceil(stackViewHeight + titleHeight + 44)
         layoutAttributes.frame = frame
 
         return layoutAttributes
@@ -82,12 +81,11 @@ class RulesTodoCollectionViewCell: UICollectionViewCell {
         ruleBackground.snp.makeConstraints { make in
             make.top.equalTo(ruleTitleLabel.snp.bottom).offset(12)
             make.leading.equalTo(ruleTitleLabel.snp.leading)
-//            make.bottom.equalToSuperview()
-            make.width.equalTo(156)
+            make.width.equalTo((UIScreen.main.bounds.width - 48 - 15) / 2)
         }
         
         ruleLabelStackView.snp.makeConstraints { make in
-            make.edges.equalToSuperview().inset(10)
+            make.edges.equalToSuperview().inset(20)
         }
         
         todoTitleLabel.snp.makeConstraints { make in
@@ -103,7 +101,7 @@ class RulesTodoCollectionViewCell: UICollectionViewCell {
         }
         
         todoLabelStackView.snp.makeConstraints { make in
-            make.edges.equalToSuperview().inset(10)
+            make.edges.equalToSuperview().inset(20)
         }
         
     }
@@ -136,7 +134,6 @@ class RulesTodoCollectionViewCell: UICollectionViewCell {
             label.setCheckButton(item.isDone)
             
             todoLabelStackView.addArrangedSubview(label)
-//            UITapGestureRecognizer
         }
     }
     

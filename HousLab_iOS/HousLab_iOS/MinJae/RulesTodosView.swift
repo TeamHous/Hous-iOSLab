@@ -30,7 +30,7 @@ class RulesTodosView: UIView {
     
     private lazy var stackView = UIStackView(arrangedSubviews: [circleImageView, checkButton, ruleLabel]).then {
         $0.axis = .horizontal
-        $0.alignment = .center
+        $0.alignment = .firstBaseline
         $0.spacing = 8
     }
     
