@@ -18,10 +18,9 @@ class ProfileViewController: EuiJinBaseViewController {
     
     let profileMainCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.minimumLineSpacing = 5
+        layout.minimumLineSpacing = 0
         layout.scrollDirection = .vertical
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        layout.itemSize = CGSize(width: UIScreen.main.bounds.width, height: 50)
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         return cv
         }()
@@ -48,7 +47,8 @@ class ProfileViewController: EuiJinBaseViewController {
     
     override func setConstraints() {
         profileMainCollectionView.snp.makeConstraints{ make in
-            make.top.equalTo(view.safeAreaLayoutGuide)
+            let width = UIScreen.main.bounds.width
+            make.top.equalTo(view.safeAreaLayoutGuide).offset(width * (68/375))
             make.bottom.equalToSuperview()
             make.trailing.equalToSuperview()
             make.leading.equalToSuperview()
@@ -58,8 +58,8 @@ class ProfileViewController: EuiJinBaseViewController {
     //MARK: - Private Methods
     
     private func setDelegate(){
-        profileMainCollectionView.delegate = self
-        profileMainCollectionView.dataSource = self
+        self.profileMainCollectionView.delegate = self
+        self.profileMainCollectionView.dataSource = self
     }
     
     
@@ -75,7 +75,7 @@ class ProfileViewController: EuiJinBaseViewController {
 
 extension ProfileViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return 3
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -83,9 +83,21 @@ extension ProfileViewController: UICollectionViewDelegateFlowLayout, UICollectio
         default:
             guard let cell = profileMainCollectionView.dequeueReusableCell(withReuseIdentifier: identifiers[0], for: indexPath) as? ProfileSubCollectionViewCell else {return UICollectionViewCell()}
             return cell
-//        default:
-//            let cell = UICollectionViewCell()
-//            return cell
+
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = UIScreen.main.bounds.width
+        switch indexPath.row{
+        case 0:
+            return CGSize(width: width, height: width * (114 / 375))
+        case 1:
+            return CGSize(width: width, height: width * (354 / 375))
+        case 2:
+            return CGSize(width: width, height: width * (222 / 375))
+        default:
+            return CGSize(width: 0, height: 0)
         }
     }
 
