@@ -8,10 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		7713C62B2872F26C00F674BF /* Inject in Frameworks */ = {isa = PBXBuildFile; productRef = 7713C62A2872F26C00F674BF /* Inject */; };
+		9B8573922877E874005200D1 /* ProfileTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8573912877E874005200D1 /* ProfileTopView.swift */; };
 		9B875C3B287495270084F660 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B875C3A287495270084F660 /* ProfileViewController.swift */; };
 		9B875C3D287496840084F660 /* ProfileSubView_Form.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B875C3C287496840084F660 /* ProfileSubView_Form.swift */; };
 		9BC992C52875D1C000E7E895 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC992C42875D1C000E7E895 /* Preview.swift */; };
 		9BC992C72875FFA300E7E895 /* ProfileSubCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC992C62875FFA300E7E895 /* ProfileSubCollectionViewCell.swift */; };
+		9BD7D895287955B90048ADBE /* ProfileGraphCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD7D894287955B90048ADBE /* ProfileGraphCollectionViewCell.swift */; };
+		9BD7D897287957EE0048ADBE /* ProfileBedgeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD7D896287957EE0048ADBE /* ProfileBedgeCollectionViewCell.swift */; };
+		9BD7D89928795FFD0048ADBE /* BasePaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD7D89828795FFD0048ADBE /* BasePaddingLabel.swift */; };
 		9BF2CF5D28758E95001AA51C /* EuiJinBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF2CF5C28758E95001AA51C /* EuiJinBaseView.swift */; };
 		B5B5C11D2872E3DB00FC5134 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B5B5C11C2872E3DB00FC5134 /* SnapKit */; };
 		B5B5C1202872E43E00FC5134 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = B5B5C11F2872E43E00FC5134 /* Then */; };
@@ -27,10 +31,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9B8573912877E874005200D1 /* ProfileTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTopView.swift; sourceTree = "<group>"; };
 		9B875C3A287495270084F660 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		9B875C3C287496840084F660 /* ProfileSubView_Form.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSubView_Form.swift; sourceTree = "<group>"; };
 		9BC992C42875D1C000E7E895 /* Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
 		9BC992C62875FFA300E7E895 /* ProfileSubCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSubCollectionViewCell.swift; sourceTree = "<group>"; };
+		9BD7D894287955B90048ADBE /* ProfileGraphCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileGraphCollectionViewCell.swift; sourceTree = "<group>"; };
+		9BD7D896287957EE0048ADBE /* ProfileBedgeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileBedgeCollectionViewCell.swift; sourceTree = "<group>"; };
+		9BD7D89828795FFD0048ADBE /* BasePaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePaddingLabel.swift; sourceTree = "<group>"; };
 		9BF2CF5C28758E95001AA51C /* EuiJinBaseView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = EuiJinBaseView.swift; sourceTree = "<group>"; tabWidth = 2; };
 		B85302A228728F6300F06234 /* HousLab_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HousLab_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B85302A528728F6300F06234 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -113,7 +121,11 @@
 				9BF2CF5C28758E95001AA51C /* EuiJinBaseView.swift */,
 				9B875C3A287495270084F660 /* ProfileViewController.swift */,
 				9BC992C62875FFA300E7E895 /* ProfileSubCollectionViewCell.swift */,
+				9BD7D894287955B90048ADBE /* ProfileGraphCollectionViewCell.swift */,
+				9BD7D896287957EE0048ADBE /* ProfileBedgeCollectionViewCell.swift */,
 				9B875C3C287496840084F660 /* ProfileSubView_Form.swift */,
+				9B8573912877E874005200D1 /* ProfileTopView.swift */,
+				9BD7D89828795FFD0048ADBE /* BasePaddingLabel.swift */,
 			);
 			path = EuiJin;
 			sourceTree = "<group>";
@@ -236,11 +248,15 @@
 				9B875C3B287495270084F660 /* ProfileViewController.swift in Sources */,
 				B85302C52872A1FF00F06234 /* MinJaeViewController.swift in Sources */,
 				B85302AA28728F6300F06234 /* ViewController.swift in Sources */,
+				9BD7D89928795FFD0048ADBE /* BasePaddingLabel.swift in Sources */,
 				B85302C72872A20600F06234 /* JiHyeonViewController.swift in Sources */,
 				B85302C12872A1EC00F06234 /* HoseViewController.swift in Sources */,
+				9BD7D895287955B90048ADBE /* ProfileGraphCollectionViewCell.swift in Sources */,
 				9BC992C52875D1C000E7E895 /* Preview.swift in Sources */,
 				B85302A628728F6300F06234 /* AppDelegate.swift in Sources */,
 				9B875C3D287496840084F660 /* ProfileSubView_Form.swift in Sources */,
+				9B8573922877E874005200D1 /* ProfileTopView.swift in Sources */,
+				9BD7D897287957EE0048ADBE /* ProfileBedgeCollectionViewCell.swift in Sources */,
 				B85302C32872A1F900F06234 /* EuiJinViewController.swift in Sources */,
 				9BF2CF5D28758E95001AA51C /* EuiJinBaseView.swift in Sources */,
 				B85302A828728F6300F06234 /* SceneDelegate.swift in Sources */,

@@ -12,9 +12,11 @@ class ProfileViewController: EuiJinBaseViewController {
    
     //MARK: - Properties
     
-    let identifiers = [ProfileSubCollectionViewCell.identifier]
+    let profileTopView = ProfileTopView()
     
-    let cells = [ProfileSubCollectionViewCell.self]
+    let identifiers = [ProfileSubCollectionViewCell.identifier, ProfileGraphbCollectionViewCell.identifier, ProfileBedgeCollectionViewCell.identifier]
+    
+    let cells = [ProfileSubCollectionViewCell.self, ProfileGraphbCollectionViewCell.self, ProfileBedgeCollectionViewCell.self]
     
     let profileMainCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -39,7 +41,7 @@ class ProfileViewController: EuiJinBaseViewController {
     }
     
     override func configureUI() {
-        [profileMainCollectionView].forEach {self.view.addSubview($0)}
+        [profileTopView, profileMainCollectionView].forEach {self.view.addSubview($0)}
         profileMainCollectionView.backgroundColor = .yellow
         setDelegate()
         registerCell()
@@ -48,12 +50,21 @@ class ProfileViewController: EuiJinBaseViewController {
     override func setConstraints() {
         profileMainCollectionView.snp.makeConstraints{ make in
             let width = UIScreen.main.bounds.width
-            make.top.equalTo(view.safeAreaLayoutGuide).offset(width * (68/375))
+            make.top.equalTo(view.safeAreaLayoutGuide).offset(width * (60/375))
             make.bottom.equalToSuperview()
             make.trailing.equalToSuperview()
             make.leading.equalToSuperview()
         }
-    }
+        
+        profileTopView.snp.makeConstraints { make in
+            let width = UIScreen.main.bounds.width
+            make.width.equalTo(width)
+            make.height.equalTo(width * (60 / 375))
+            make.top.equalTo(view.safeAreaLayoutGuide)
+            make.trailing.equalToSuperview()
+        }
+            
+        }
     
     //MARK: - Private Methods
     
@@ -75,14 +86,23 @@ class ProfileViewController: EuiJinBaseViewController {
 
 extension ProfileViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return identifiers.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch indexPath.row{
-        default:
+        case 0:
             guard let cell = profileMainCollectionView.dequeueReusableCell(withReuseIdentifier: identifiers[0], for: indexPath) as? ProfileSubCollectionViewCell else {return UICollectionViewCell()}
             return cell
+        case 1:
+            guard let cell = profileMainCollectionView.dequeueReusableCell(withReuseIdentifier: identifiers[1], for: indexPath) as? ProfileGraphbCollectionViewCell else {return UICollectionViewCell()}
+            return cell
+        
+        case 2:
+            guard let cell = profileMainCollectionView.dequeueReusableCell(withReuseIdentifier: identifiers[2], for: indexPath) as? ProfileBedgeCollectionViewCell else {return UICollectionViewCell()}
+            return cell
+        default:
+            return UICollectionViewCell()
 
         }
     }
