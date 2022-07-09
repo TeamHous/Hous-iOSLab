@@ -10,7 +10,7 @@ import UIKit
 class RulesTodoCollectionViewCell: UICollectionViewCell {
     
     private let ruleTitleLabel = UILabel().then {
-        $0.text = "Rules"
+        $0.text = "Key Rules"
         $0.font = .systemFont(ofSize: 20, weight: .semibold)
         $0.textAlignment = .left
     }
@@ -43,6 +43,19 @@ class RulesTodoCollectionViewCell: UICollectionViewCell {
         $0.spacing = 8
     }
     
+    let emptyRuleLabel = UILabel().then {
+        $0.text = "아직 규칙이 없어요:("
+        $0.font = .systemFont(ofSize: 13, weight: .regular)
+        $0.isHidden = true
+    }
+    
+    let emptyTodoLabel = UILabel().then {
+        $0.text = "아직 할 일이 없어요:("
+        $0.font = .systemFont(ofSize: 13, weight: .regular)
+        $0.isHidden = true
+    }
+    
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         render()
@@ -71,7 +84,10 @@ class RulesTodoCollectionViewCell: UICollectionViewCell {
     private func render() {
         contentView.addSubViews([ruleTitleLabel,ruleBackground, todoTitleLabel, todoBackground])
         ruleBackground.addSubview(ruleLabelStackView)
+        ruleBackground.addSubview(emptyRuleLabel)
+        
         todoBackground.addSubview(todoLabelStackView)
+        todoBackground.addSubview(emptyTodoLabel)
         
         ruleTitleLabel.snp.makeConstraints { make in
             make.top.equalToSuperview()
@@ -101,6 +117,14 @@ class RulesTodoCollectionViewCell: UICollectionViewCell {
         }
         
         todoLabelStackView.snp.makeConstraints { make in
+            make.edges.equalToSuperview().inset(20)
+        }
+        
+        emptyRuleLabel.snp.makeConstraints { make in
+            make.edges.equalToSuperview().inset(20)
+        }
+        
+        emptyTodoLabel.snp.makeConstraints { make in
             make.edges.equalToSuperview().inset(20)
         }
         

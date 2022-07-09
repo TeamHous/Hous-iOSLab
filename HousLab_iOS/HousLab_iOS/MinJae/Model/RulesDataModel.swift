@@ -14,7 +14,7 @@ struct RulesDataModel {
 
 extension RulesDataModel {
     static let sampleData: [RulesDataModel] = [
-        RulesDataModel(ruleString: "00시~불끄기"),
+        RulesDataModel(ruleString: "00시~불끄ㅇㄴㄹ민재민재"),
         RulesDataModel(ruleString: "23시~이어폰 필수"),
         RulesDataModel(ruleString: "세탁기는 화수토")
 //        RulesDataModel(ruleString: "일 청소하는날"),

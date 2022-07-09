@@ -12,10 +12,17 @@ import Then
 
 class HomeViewController: UIViewController {
     
+    private enum HomeSection: Int {
+        case events
+        case rulesTodo
+        case profiles
+    }
+    
     private enum Size {
         static let screenWidth = UIScreen.main.bounds.width
         static let eventCellSize = CGSize(width: Size.screenWidth, height: 88)
-        static let profileCellSize = CGSize(width: 103, height: 103)
+        static let profileCellSize = CGSize(width: Size.screenWidth / 3 - 22, height: Size.screenWidth / 3 - 22)
+        static let titleCellSize = CGSize(width: Size.screenWidth, height: 37)
     }
     
     //MARK: Properties
@@ -89,7 +96,7 @@ extension HomeViewController: UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        if section == 0 || section == 2 {
+        if section == HomeSection.events.rawValue || section == HomeSection.profiles.rawValue {
             return CGSize(width: view.frame.size.width, height: 24)
         }
         
@@ -121,17 +128,24 @@ extension HomeViewController: UICollectionViewDataSource {
             cell.delegate = self
             
             return cell
-        case 1:
+        case HomeSection.rulesTodo.rawValue:
             guard let cell = homeCollectionView.dequeueReusableCell(withReuseIdentifier: RulesTodoCollectionViewCell.className, for: indexPath) as? RulesTodoCollectionViewCell,
                   let rules = rules,
                   let todos = todos
             else { return UICollectionViewCell() }
-
+            
+            if todos.count == 0 {
+                cell.emptyTodoLabel.isHidden = false
+            }
+            if rules.count == 0 {
+                cell.emptyRuleLabel.isHidden = false
+            }
+            
             cell.setRulesData(rules)
             cell.setTodosData(todos)
 
             return cell
-        case 2:
+        case HomeSection.profiles.rawValue:
             guard let cell = homeCollectionView.dequeueReusableCell(withReuseIdentifier: ProfileCollectionViewCell.className, for: indexPath) as? ProfileCollectionViewCell else { return UICollectionViewCell() }
 
             if indexPath.row == ProfileDataModel.sampleData.count {
@@ -154,9 +168,9 @@ extension HomeViewController: UICollectionViewDataSource {
             guard let header = homeCollectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderCollectionReusableView.className, for: indexPath) as? HeaderCollectionReusableView else { return UICollectionReusableView() }
             
             switch indexPath.section {
-            case 0:
+            case HomeSection.events.rawValue:
                 header.setSubTitleLabel(data: "Coming up-")
-            case 2:
+            case HomeSection.profiles.rawValue:
                 header.setSubTitleLabel(data: "Homie Profile-")
             default:
                 return UICollectionReusableView()
@@ -171,14 +185,13 @@ extension HomeViewController: UICollectionViewDataSource {
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        
+        // CollectionView dynamic height
         switch indexPath.section {
-            // 이거 동적으로 collection 높이
-        case 0:
+        case HomeSection.events.rawValue:
             return Size.eventCellSize
-        case 1:
+        case HomeSection.rulesTodo.rawValue:
             return CGSize(width: Size.screenWidth, height: 200)
-        case 2:
+        case HomeSection.profiles.rawValue:
             return Size.profileCellSize
         default:
             return CGSize()
@@ -188,11 +201,11 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         
         switch section {
-        case 0:
+        case HomeSection.events.rawValue:
             return UIEdgeInsets(top: 12, left: 0, bottom: 24, right: 0)
-        case 1:
+        case HomeSection.rulesTodo.rawValue:
             return UIEdgeInsets(top: 3, left: 0, bottom: 24, right: 0)
-        case 2:
+        case HomeSection.profiles.rawValue:
             return UIEdgeInsets(top: 12, left: 24, bottom: 0, right: 24)
         default:
             return UIEdgeInsets()
@@ -202,11 +215,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         
         switch section {
-        case 0:
-            return 0
-        case 1:
-            return 0
-        case 2:
+        case HomeSection.profiles.rawValue:
             return 12
         default:
             return 0
@@ -217,11 +226,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         
         switch section {
-        case 0:
-            return 0
-        case 1:
-            return 0
-        case 2:
+        case HomeSection.profiles.rawValue:
             return 9
         default:
             return 0

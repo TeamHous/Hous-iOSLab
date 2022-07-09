@@ -72,7 +72,8 @@ class ProfileCollectionViewCell: UICollectionViewCell {
         }
         
         codeViewStack.snp.makeConstraints {
-            $0.center.equalToSuperview()
+            $0.centerX.equalToSuperview()
+            $0.bottom.equalToSuperview().inset(8)
         }
         
     }

@@ -40,7 +40,6 @@ class PopUpViewController: UIViewController {
     }
     
     private let cancelButton = UIButton().then {
-        // 여기해야됨
         var config = UIButton.Configuration.plain()
         config.title = "취소"
         config.baseForegroundColor = .red
