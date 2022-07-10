@@ -46,7 +46,7 @@ class ProfileSubCollectionViewCell: UICollectionViewCell {
     }
     
     var tag1 = BasePaddingLabel(padding: UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)).then{
-        $0.text = "부엉이"
+        $0.text = "이의진"
         $0.textColor = .white
         $0.font = .systemFont(ofSize: 13)
         $0.backgroundColor = .purple
@@ -70,6 +70,7 @@ class ProfileSubCollectionViewCell: UICollectionViewCell {
     
     private func configureUI(){
         self.backgroundColor = .white
+        print(1)
         [profileImage, userName, userJob, profileGuideStackView].forEach {self.addSubview($0)}
         [userName, statusMessage, tag1].forEach {profileGuideStackView.addArrangedSubview($0)}
     }

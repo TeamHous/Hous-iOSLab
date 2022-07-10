@@ -59,7 +59,7 @@ class ProfileViewController: EuiJinBaseViewController {
         profileTopView.snp.makeConstraints { make in
             let width = UIScreen.main.bounds.width
             make.width.equalTo(width)
-            make.height.equalTo(width * (60 / 375))
+            make.height.equalTo(width * (50 / 375))
             make.top.equalTo(view.safeAreaLayoutGuide)
             make.trailing.equalToSuperview()
         }
